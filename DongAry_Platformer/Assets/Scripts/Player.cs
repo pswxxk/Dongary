@@ -58,8 +58,9 @@ public class Player : MonoBehaviour
             if (Physics2D.Raycast(transform.position, Vector2.down, 1.7f, isGround) && Input.GetKeyDown(KeyCode.Space))
             {
                 rb.velocity += Vector2.up * jumpForce;
-
-            }
+                anim.SetTrigger("Jump");
+            }          
+            
             if (Input.GetButtonUp("Horizontal"))
             {
                 anim.SetBool("Sliding", true);
